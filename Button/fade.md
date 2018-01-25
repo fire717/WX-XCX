@@ -1,5 +1,7 @@
 类似文字游戏按钮点击一下逐渐往左移动的样式。
 
+### wxml
+
 ```html
 <view class='buttonType'>
     <view class='buttonBox' ></view>
@@ -7,6 +9,8 @@
     <view class='buttonText' bindtap='buttonText' >a modest village</view>
 </view>
 ```
+
+### wxss
 
 ```css
 .buttonType{
@@ -42,6 +46,8 @@
   line-height: 80rpx;
 }
 ```
+
+### js
 
 ```js
 Page({
