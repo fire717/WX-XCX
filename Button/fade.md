@@ -50,29 +50,44 @@
 ### js
 
 ```js
+//获取应用实例
+const app = getApp()
+
 Page({
   data: {
-    animationData:{}
+    animationData:{},
+    buttonLoad:false
   },
   //事件处理函数
   onLoad: function () {
   },
 
   buttonText:function(){
-    console.log('tap!')
-    var animation = wx.createAnimation({
-      duration: 3000,
-      timingFunction: 'linear',
-      transformOrigin: "0% 50% 0"
-    })
+    var self = this
+    var buttonLoad = self.data.buttonLoad
+    var waitTime = 3000
+    if (!buttonLoad){
+      console.log('tap!')
+      var animation = wx.createAnimation({
+        duration: waitTime,
+        timingFunction: 'linear',
+        transformOrigin: "0% 50% 0"
+      })
 
-    //animation.translateX(-100).step()
-    animation.scaleX(0).step()
-    animation.scaleX(1).step({ duration:0});
-    this.setData({
-      animationData: animation.export()
-    })
-    console.log(this.data.animationData)
+      animation.scaleX(0).step()
+      self.setData({
+        buttonLoad:true
+      })
+      animation.scaleX(1).step({ duration:0});
+      self.setData({
+        animationData: animation.export(),
+      })
+      setTimeout(function(){
+        self.setData({
+          buttonLoad: false
+        })
+      }, waitTime)
+    }
   }
   
 })
