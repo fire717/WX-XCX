@@ -1,5 +1,7 @@
 类似文字游戏按钮点击一下背景色逐渐往左移动的样式。
 
+![button](../img/button/button0.gif)
+
 ### wxml
 
 ```html
