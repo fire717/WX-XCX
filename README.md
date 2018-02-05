@@ -7,3 +7,4 @@
 
 ## 2.界面
 * [☆新添加的元素保持在底部](http://blog.csdn.net/wy_blog/article/details/71171049)
+* [☆tab切换](http://www.jb51.net/article/103803.htm)
